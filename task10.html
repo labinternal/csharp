@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 10 - Validation Controls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .note {
+            background: #fff8dc;
+            border-left: 5px solid #ffc107;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007acc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 10 - Validation Controls</h2>
+
+    <p>This form uses basic validation to ensure that the user enters a valid name, password, and email. It will show
+        message boxes with appropriate validation errors or success.</p>
+
+    <h3>🧾 Code: <code>Form1.cs</code></h3>
+    <pre><code>using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace task10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if ((String.IsNullOrEmpty(textBox1.Text)))
+            {
+                MessageBox.Show("Enter name");
+                return;
+            }
+            if ((String.IsNullOrEmpty(textBox2.Text)))
+            {
+                MessageBox.Show("Enter Password");
+                return;
+            }
+            if ((textBox2.Text.Length < 8))
+            {
+                MessageBox.Show("Password must be 8 chars");
+                return;
+            }
+            if (String.IsNullOrEmpty(textBox3.Text))
+            {
+                MessageBox.Show("Enter email");
+                return;
+            }
+            if (!(textBox3.Text).Contains('@'))
+            {
+                MessageBox.Show("Enter valid email");
+                return;
+            }
+            MessageBox.Show("Submited successfully");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+    }
+}</code></pre>
+
+    <div class="note">
+        <strong>Note:</strong> This form validates the input fields. If any field is empty or the password is too short,
+        it displays a message box. The email field must also contain the "@" symbol.
+    </div>
+
+    <a href="index.html">← Back to Home</a>
+
+</body>
+
+</html>

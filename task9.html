@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 9 - Color Dialog Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2e3a59;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .terminal {
+            background: #e2e8f0;
+            padding: 10px;
+            border-left: 5px solid #4299e1;
+            margin-top: 10px;
+        }
+
+        .note {
+            background: #fff8dc;
+            border-left: 5px solid #ffc107;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007acc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 9 - Color Dialog Box</h2>
+
+    <p>This program demonstrates how to use a <strong>ColorDialog</strong> in a Windows Forms application to let the
+        user pick a color for the form background.</p>
+
+    <h3>📁 Terminal Commands</h3>
+    <div class="terminal">
+        dotnet new winforms -o first
+    </div>
+
+    <h3>🧾 Code: <code>Program.cs</code></h3>
+    <pre><code>using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace First
+{
+    public class MyForm : Form
+    {
+        public MyForm()
+        {
+            InitComponents();
+        }
+
+        private void InitComponents()
+        {
+            // Show the color dialog when the form is created
+            ColorDialog dlg = new ColorDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                // Optional: change the form's background color to the selected color
+                this.BackColor = dlg.Color;
+            }
+        }
+
+        [STAThread]
+        static void Main()
+        {
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MyForm());
+        }
+    }
+}</code></pre>
+
+    <h3>🚀 Run the Project</h3>
+    <div class="terminal">
+        dotnet run --project first
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> When the form starts, a color dialog appears. After selecting a color, the form
+        background changes to that color.
+    </div>
+
+    <a href="index.html">← Back to Home</a>
+
+</body>
+
+</html>

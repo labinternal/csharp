@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 8 & 12 - Creating Databases</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+        }
+
+        ul {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Task 8 & Task 12 - Creating Databases in Windows Forms App</h1>
+
+    <h2>🧾 Steps:</h2>
+
+    <ul>
+        <li><strong>✅ Step 1: Create a New Project</strong><br>
+            • Open Visual Studio.<br>
+            • Select <code>Windows Forms App (.NET Framework)</code>.<br>
+            • Give the project a name.<br>
+            • Click <strong>Create</strong>.
+        </li>
+
+        <li><strong>✅ Step 2: Setup Database in Server Explorer</strong><br>
+            • Go to <code>View → Server Explorer</code>.<br>
+            • Right-click on <strong>Data Connections</strong> → Select <strong>Add Connection</strong>.<br>
+            • Choose <strong>Microsoft SQL Server</strong> as the data source.<br>
+            • Enter the <strong>Server Name</strong> and choose or create a database.<br>
+            • Click <strong>OK</strong>.
+        </li>
+
+        <li><strong>✅ Step 3: Add Table in Database</strong><br>
+            • Expand the connected database.<br>
+            • Right-click on <strong>Tables</strong> → Select <strong>Add New Table</strong>.<br>
+            • Add columns like <code>ID</code>, <code>Name</code>, etc.<br>
+            • Save the table (e.g., <code>Student</code>).<br>
+            • Click <strong>Update</strong> → then <strong>Update Database</strong>.<br>
+            • Refresh to see the table.
+        </li>
+
+        <li><strong>✅ Step 4: Add Database to Form</strong><br>
+            • In the toolbox, drag and drop a <code>DataGridView</code> and <code>BindingNavigator</code>.<br>
+            • Click the small arrow on the <code>DataGridView</code> → Select <strong>Add Project Data
+                Source</strong>.<br>
+            • Choose <strong>Database</strong> → then <strong>Dataset</strong>.<br>
+            • Select your connection and the required table (e.g., <code>Student</code>).<br>
+            • Click <strong>Finish</strong>.
+        </li>
+
+        <li><strong>✅ Step 5: Bind the Data</strong><br>
+            • <code>DataGridView</code> will now be bound to your table.<br>
+            • You can insert data and save it using the <code>BindingNavigator</code>.
+        </li>
+
+        <li><strong>✅ Step 6: Final Steps</strong><br>
+            • Save the project.<br>
+            • Click <strong>Start</strong> ▶️ to run the form.<br>
+            • You can now insert data into the SQL table visually.
+        </li>
+    </ul>
+<a href="index.html">← Back to Home</a>
+</body>
+
+</html>

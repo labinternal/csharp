@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2 - Method Overloading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .steps {
+            background: #e6f7ff;
+            padding: 10px;
+            border-left: 5px solid #00aaff;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 2 - Method Overloading</h2>
+
+    <pre><code>using System;
+public class Methodoverloading
+{
+    public int add(int a, int b) //two int type Parameters method
+    {
+        int sum = a + b;
+        return sum;
+    }
+
+    public double add(double a, double b, double c)
+    {
+        double sum = a + b + c;
+        return sum;
+    }
+
+    public float add(float a, float b, float c, float d)
+    {
+        float sum = a + b + c + d;
+        return sum;
+    }
+
+    public static void Main(string[] args)
+    {
+        Methodoverloading ob = new Methodoverloading();
+        int sum2 = ob.add(2, 4);
+        Console.WriteLine("Sum of two integer value: " + sum2);
+        double sum3 = ob.add(5.2d, 3.5d, 3.2d);
+        Console.WriteLine("Sum of three double value: " + sum3);
+        float sum4 = ob.add(0.1f, 0.3f, 0.8f, 0.1f);
+        Console.WriteLine("Sum of four float value: " + sum4);
+    }
+}
+</code></pre>
+
+    <div class="steps">
+        <strong>Steps to Compile & Run:</strong>
+        <ol>
+            <li>Save the code in a file named <code>Methodoverloading.cs</code></li>
+            <li>In terminal, run: <code>csc Methodoverloading.cs</code></li>
+            <li>Then run using: <code>.\Methodoverloading</code></li>
+        </ol>
+    </div>
+
+    <a href="../index.html">← Back to Task List</a>
+
+</body>
+
+</html>

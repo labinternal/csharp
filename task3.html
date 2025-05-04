@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 - Employee Details using Class and Object</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #222;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .steps {
+            background: #e7f7e7;
+            padding: 10px;
+            border-left: 5px solid #2ecc71;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 3 - Employee Details using Class and Object</h2>
+
+    <pre><code>using System;
+public class employee
+{
+    public int id;
+    public string name;
+    public float salary;
+
+    public void insert(int i, string n, float s)
+    {
+        id = i;
+        name = n;
+        salary = s;
+    }
+
+    public void display()
+    {
+        Console.WriteLine(id + " " + name + " " + salary);
+    }
+}
+
+class test
+{
+    public static void Main(string[] args)
+    {
+        employee e1 = new employee();
+        int a; string b; float c;
+
+        Console.WriteLine("Enter the No.");
+        a = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter name");
+        b = Convert.ToString(Console.ReadLine());
+
+        Console.WriteLine("Enter the salary.");
+        c = Convert.ToSingle(Console.ReadLine());
+
+        e1.insert(a, b, c);
+        e1.display();
+    }
+}
+</code></pre>
+
+    <div class="steps">
+        <strong>Steps to Compile & Run:</strong>
+        <ol>
+            <li>Save the code in a file named <code>employee.cs</code></li>
+            <li>Compile using: <code>csc employee.cs</code></li>
+            <li>Run it using: <code>.\employee</code></li>
+        </ol>
+    </div>
+
+    <a href="../index.html">← Back to Task List</a>
+
+</body>
+
+</html>

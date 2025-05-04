@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5 - Windows Form using HTML Controls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .steps {
+            background: #e7f3fe;
+            padding: 15px;
+            border-left: 5px solid #2196f3;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 5 - Window Form using HTML Controls</h2>
+
+    <div class="steps">
+        <strong>Step-by-step guide:</strong>
+        <ol>
+            <li>Open terminal and create a new Razor web app:<br>
+                <code>dotnet new webapp -n InvoiceApp</code>
+            </li>
+        </ol>
+    </div>
+
+    <h3>📄 index.cshtml.cs</h3>
+    <pre><code>using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
+
+namespace InvoiceApp.Pages
+{
+    public class IndexModel : PageModel
+    {
+        public List&lt;Item&gt; Items { get; set; }
+
+        public void OnGet()
+        {
+            Items = new List&lt;Item&gt;
+            {
+                new Item { Sno = 1, Name = "Apple", Price = 20 },
+                new Item { Sno = 2, Name = "Mango", Price = 15 },
+                new Item { Sno = 3, Name = "Banana", Price = 3 }
+            };
+        }
+
+        public class Item
+        {
+            public int Sno { get; set; }
+            public string Name { get; set; }
+            public int Price { get; set; }
+        }
+    }
+}</code></pre>
+
+    <h3>📄 index.cshtml</h3>
+    <pre><code>@page
+@model InvoiceApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Invoice Page";
+}
+
+&lt;div class="text-center"&gt;
+    &lt;h1 class="display-4"&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;Learn about 
+        &lt;a href="https://docs.microsoft.com/aspnet/core"&gt;
+            building Web apps with ASP.NET Core
+        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;h2&gt;Invoice&lt;/h2&gt;
+    &lt;table border="1" width="300"&gt;
+        &lt;caption&gt;Invoice&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Sno&lt;/th&gt;
+            &lt;th&gt;Item&lt;/th&gt;
+            &lt;th&gt;Price (Rs.)&lt;/th&gt;
+        &lt;/tr&gt;
+        @foreach (var item in Model.Items)
+        {
+            &lt;tr&gt;
+                &lt;td&gt;@item.Sno&lt;/td&gt;
+                &lt;td&gt;@item.Name&lt;/td&gt;
+                &lt;td&gt;Rs. @item.Price&lt;/td&gt;
+            &lt;/tr&gt;
+        }
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+
+    <div class="steps">
+        <strong>Run the app:</strong>
+        <ol>
+            <li>Navigate into the project folder: <code>cd InvoiceApp</code></li>
+            <li>Start the server: <code>dotnet run</code></li>
+            <li>Your site will be hosted at: <code>http://localhost:5048</code> (or similar)</li>
+        </ol>
+    </div>
+
+    <a href="../index.html">← Back to Task List</a>
+
+</body>
+
+</html>

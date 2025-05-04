@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 7 - Threads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .note {
+            background: #fef9c3;
+            border-left: 4px solid #facc15;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007acc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 7 - Threads</h2>
+
+    <p>This C# program demonstrates multithreading by creating a thread that runs a method from another class.</p>
+
+    <h3>🧾 Code</h3>
+    <pre><code>using System;
+using System.Threading;
+
+public class ExThread
+{
+    // Non-static method
+    public void mythread1()
+    {
+        for (int z = 0; z < 3; z++)
+        {
+            Console.WriteLine("First Thread");
+        }
+    }
+}
+
+// Driver Class
+public class thread
+{
+    // Main Method
+    public static void Main()
+    {
+        // Creating object of ExThread class
+        ExThread obj = new ExThread();
+
+        // Creating thread using Thread class
+        Thread thr = new Thread(new ThreadStart(obj.mythread1));
+        thr.Start();
+
+        // To delete/abort a Thread (optional)
+        // Console.WriteLine("Thread is abort");
+        // thr.Abort();
+    }
+}</code></pre>
+
+    <div class="note">
+        <strong>Note:</strong> The <code>Thread</code> class allows execution of code in a separate thread. The
+        <code>Abort()</code> method is commented out because it's deprecated and unsafe in modern C#.
+    </div>
+
+    <a href="index.html">← Back to Home</a>
+
+</body>
+
+</html>

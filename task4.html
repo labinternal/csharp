@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Inheritance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #fdfdfd;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .steps {
+            background: #fff3cd;
+            padding: 10px;
+            border-left: 5px solid #ffc107;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 4 - Inheritance</h2>
+
+    <pre><code>using System;
+public class Employee
+{
+    public float salary = 40000;
+}
+
+public class Programmer : Employee
+{
+    public float bonus = 10000;
+}
+
+class TestInheritance
+{
+    public static void Main(string[] args)
+    {
+        Programmer p1 = new Programmer();
+        Console.WriteLine("Salary: " + p1.salary);
+        Console.WriteLine("Bonus: " + p1.bonus);
+    }
+}
+</code></pre>
+
+    <div class="steps">
+        <strong>Steps to Compile & Run:</strong>
+        <ol>
+            <li>Save the code in a file named <code>TestInheritance.cs</code></li>
+            <li>Compile using: <code>csc TestInheritance.cs</code></li>
+            <li>Run it using: <code>.\TestInheritance</code></li>
+        </ol>
+    </div>
+
+    <a href="../index.html">← Back to Task List</a>
+
+</body>
+
+</html>

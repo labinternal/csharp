@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task 6 - Strings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fdfdfd;
+            padding: 20px;
+        }
+
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .note {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 5px solid #ffc107;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 6 - Strings</h2>
+
+    <p>This program demonstrates the difference between <strong>String</strong> and <strong>StringBuilder</strong> when
+        performing concatenation operations in C#.</p>
+
+    <h3>🧾 Code</h3>
+    <pre><code>using System;
+using System.Text;
+
+class stringbuilder
+{
+    // Concatenates to String
+    public static void concat1(String s1)
+    {
+        // Concatenation using String.Concat
+        String st = "To C#.NET Lab";
+        s1 = String.Concat(s1, st);
+        // Alternatively: s1 = s1 + "To C#.NET Lab";
+    }
+
+    // Concatenates to StringBuilder
+    public static void concat2(StringBuilder s2)
+    {
+        s2.Append("To C#.NET Lab");
+    }
+
+    public static void Main(String[] args)
+    {
+        String s1 = "Welcome";
+        concat1(s1); // s1 is not changed
+        Console.WriteLine("Using String Class: " + s1);
+
+        StringBuilder s2 = new StringBuilder("Welcome");
+        concat2(s2); // s2 is changed
+        Console.WriteLine("Using StringBuilder Class: " + s2);
+    }
+}</code></pre>
+
+    <div class="note">
+        <strong>Note:</strong> In C#, strings are immutable, so concatenation with a normal <code>string</code> does not
+        change the original string unless reassigned. However, <code>StringBuilder</code> is mutable and supports
+        efficient modifications.
+    </div>
+
+    <a href="../index.html">← Back to Task List</a>
+
+</body>
+
+</html>
